@@ -34,6 +34,20 @@ class _NamesScreenState extends State<NamesScreen> {
               word: _suggestions[index],
             //  word: _suggestions[i],
             );
+
+            // returning element at index is
+            // 100% correct but only when we are return Divider widget at
+            // odd/even positions. It is because in this way i is
+            // increasing continuously but as we are not returning element
+            // from _suggestions only 1 time when i is increased by 2. So
+            // even though we were supposed to return a word pair twice we
+            // are not. Rather we are saving words from being wasted.
+            //E.g For i in the range 0-5, we have index 0-2. Now elements at
+            // 0,1,2 are supposed to be returned twice (not actually
+            // returned as first if condition is being true for half of i
+            // values.) which is saving number of words.
+            // but
+
           },
         ),
       ),
