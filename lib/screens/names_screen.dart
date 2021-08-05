@@ -26,13 +26,15 @@ class _NamesScreenState extends State<NamesScreen> {
             }
             final index = i ~/ 2;
             if (index >= _suggestions.length) {
-              // if(2*i<_suggestions.length){
+            //   if(2*i>= _suggestions.length){
+            //   if(i+25>_suggestions.length){ //however testing shows this
+                //   this not a good way to do this
               _suggestions.addAll(generateWordPairs().take(20));
             }
 
             return NamesTile(
               word: _suggestions[index],
-            //  word: _suggestions[i],
+             // word: _suggestions[i],
             );
 
             // returning element at index is
